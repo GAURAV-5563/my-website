@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Shop thoughtful everyday products from BENIX. Get in touch by phone or email for help with your order."
+    />
+    <meta name="theme-color" content="#f8f7f4" />
+    <title>BENIX — Objects for everyday</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="announcement">
+      <p>BENIX — Thoughtful everyday finds, delivered free on orders over $75</p>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="BENIX home">
+        <span class="brand-symbol" aria-hidden="true">B.</span>
+        <span>BENIX</span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        <span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="#shop">Shop all</a>
+        <a href="#shop" data-nav-filter="home">Home</a>
+        <a href="#shop" data-nav-filter="wear">Wear</a>
+        <a href="#story">Our story</a>
+      </nav>
+
+      <button class="cart-trigger" type="button" aria-label="Open shopping bag">
+        Bag <span class="cart-count" aria-live="polite">0</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Made for the everyday</p>
+          <h1 id="hero-title">A little more <em>meaning</em> in the everyday.</h1>
+          <p class="hero-copy">
+            Considered objects for slower mornings, cozier evenings, and all the
+            little moments in between.
+          </p>
+          <a class="button button-dark" href="#shop">
+            Find your new favorite <span aria-hidden="true">↗</span>
+          </a>
+          <div class="hero-note">
+            <span class="note-stars" aria-label="Five stars">★★★★★</span>
+            <span>Loved by 2,000+ happy homes</span>
+          </div>
+        </div>
+        <div class="hero-image-wrap">
+          <img
+            class="hero-image"
+            src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&amp;fit=crop&amp;w=1400&amp;q=85"
+            alt="Sunlit, thoughtfully furnished living room in warm natural tones"
+          />
+          <div class="hero-caption">
+            <span class="caption-mark" aria-hidden="true">✳</span>
+            <span>Room to slow down</span>
+            <span class="caption-line" aria-hidden="true"></span>
+          </div>
+          <span class="image-index">01 — 04</span>
+        </div>
+      </section>
+
+      <section class="shop-section" id="shop" aria-labelledby="shop-title">
+        <div class="shop-heading">
+          <div>
+            <p class="eyebrow">The good stuff</p>
+            <h2 id="shop-title">Things you'll keep.</h2>
+            <p class="section-copy">Useful, beautiful, and better with every day.</p>
+          </div>
+          <label class="search-box">
+            <span class="visually-hidden">Search products</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10.8" cy="10.8" r="6.8"></circle>
+              <path d="m16 16 4.3 4.3"></path>
+            </svg>
+            <input type="search" id="product-search" placeholder="Find something..." />
+          </label>
+        </div>
+
+        <div class="shop-toolbar">
+          <div class="filter-list" role="group" aria-label="Filter products">
+            <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Everything <span>06</span></button>
+            <button class="filter-button" type="button" data-filter="home" aria-pressed="false">For the home</button>
+            <button class="filter-button" type="button" data-filter="wear" aria-pressed="false">To take along</button>
+          </div>
+          <p class="results-count" aria-live="polite"></p>
+        </div>
+
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        <p class="empty-state" hidden>No little things found. Try another search.</p>
+      </section>
+
+      <section class="story-section" id="story" aria-labelledby="story-title">
+        <div class="story-image">
+          <img
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=1100&amp;q=85"
+            alt="Natural materials and simple details in a calm living space"
+            loading="lazy"
+          />
+          <span class="story-image-label">Less, but better.</span>
+        </div>
+        <div class="story-content">
+          <p class="eyebrow">A note from us</p>
+          <h2 id="story-title">Buy fewer things.<br /><em>Love them longer.</em></h2>
+          <p>
+            We believe the everyday deserves a little more thought. So we make
+            useful, lasting pieces with good materials, thoughtful details, and
+            a lighter footprint.
+          </p>
+          <a class="text-link" href="#shop">A little more about us <span aria-hidden="true">↗</span></a>
+          <div class="story-stamp" aria-hidden="true">made<br />with care<br /><span>✳</span></div>
+        </div>
+      </section>
+
+      <section class="newsletter" aria-labelledby="newsletter-title">
+        <div>
+          <p class="eyebrow">A good note, now and then</p>
+          <h2 id="newsletter-title">A little something for your inbox.</h2>
+          <p>New things, thoughtful ideas, and 10% off your first order.</p>
+        </div>
+        <form class="newsletter-form">
+          <label class="visually-hidden" for="newsletter-email">Your email address</label>
+          <input id="newsletter-email" type="email" placeholder="Your email address" required />
+          <button class="button button-dark" type="submit">Count me in <span aria-hidden="true">→</span></button>
+          <p class="newsletter-status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#">
+        <span class="brand-symbol" aria-hidden="true">B.</span>
+        <span>BENIX</span>
+      </a>
+      <div class="footer-contact">
+        <a href="tel:+918209648882">8209648882</a>
+        <a href="mailto:gauravbisht4590@gmail.com">gauravbisht4590@gmail.com</a>
+      </div>
+      <p>Objects for everyday. Made with care, wherever you are.</p>
+      <span>© <span id="year"></span> BENIX</span>
+    </footer>
+
+    <div class="drawer-backdrop" hidden></div>
+    <aside class="cart-drawer" aria-labelledby="cart-title" aria-modal="true" role="dialog" aria-hidden="true">
+      <div class="drawer-header">
+        <div>
+          <p class="eyebrow">Your good finds</p>
+          <h2 id="cart-title">Your bag <span class="drawer-count">(0)</span></h2>
+        </div>
+        <button class="drawer-close" type="button" aria-label="Close shopping bag">×</button>
+      </div>
+      <div class="cart-items"></div>
+      <div class="cart-empty">
+        <span aria-hidden="true">✳</span>
+        <p>Your bag is taking a little breather.</p>
+        <button class="text-link continue-shopping" type="button">Find something lovely <span aria-hidden="true">↗</span></button>
+      </div>
+      <div class="drawer-footer" hidden>
+        <div class="subtotal-row"><span>Subtotal</span><strong class="cart-subtotal">$0.00</strong></div>
+        <p>Shipping and taxes are calculated at checkout.</p>
+        <button class="button button-dark checkout-button" type="button">Checkout <span aria-hidden="true">↗</span></button>
+      </div>
+    </aside>
+
+    <script src="script.js"></script>
+  </body>
+</html>

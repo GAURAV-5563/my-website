@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Priya Picture</title>
+  <style>
+    :root {
+      --bg1: #fff6fb;
+      --bg2: #f4e4ff;
+      --bg3: #ffe8f0;
+      --pink: #ff7bb3;
+      --pink-deep: #e55a8a;
+      --skin: #f6d9c8;
+      --hair: #3d2f39;
+      --dress: #ff9fc7;
+      --dress-deep: #ef7ca9;
+      --gold: #ffd874;
+      --shadow: rgba(128, 65, 92, 0.18);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at top, #ffffff 0%, #fffafc 18%, var(--bg1) 42%, var(--bg2) 100%),
+        linear-gradient(135deg, var(--bg3), #fbe7ff 50%, #f7f2ff 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .frame {
+      position: relative;
+      width: min(90vw, 600px);
+      height: 760px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.38));
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 42px;
+      box-shadow: 0 30px 90px var(--shadow);
+      overflow: hidden;
+    }
+
+    .rose {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.9), rgba(255,166,201,0.22));
+      filter: blur(6px);
+    }
+
+    .rose.one { top: 40px; left: 40px; }
+    .rose.two { top: 70px; right: 30px; }
+    .rose.three { bottom: 50px; left: 60px; }
+    .rose.four { bottom: 110px; right: 50px; }
+
+    .bubble {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 50%;
+      box-shadow: 0 0 22px rgba(255,255,255,0.95);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .bubble:nth-child(5) { top: 100px; left: 100px; }
+    .bubble:nth-child(6) { top: 120px; right: 120px; animation-delay: 1s; }
+    .bubble:nth-child(7) { bottom: 160px; left: 130px; animation-delay: 2.2s; }
+    .bubble:nth-child(8) { bottom: 110px; right: 150px; animation-delay: 1.4s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+      50% { transform: translateY(-16px) scale(1.25); opacity: 1; }
+    }
+
+    .card {
+      position: relative;
+      z-index: 2;
+      width: 440px;
+      text-align: center;
+      padding: 26px 18px 32px;
+      border-radius: 34px;
+      background: rgba(255,255,255,0.3);
+      backdrop-filter: blur(7px);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.55);
+    }
+
+    .portrait {
+      position: relative;
+      width: 280px;
+      height: 420px;
+      margin: 0 auto 18px;
+    }
+
+    .hair-back {
+      position: absolute;
+      left: 54px;
+      top: 24px;
+      width: 176px;
+      height: 188px;
+      background: var(--hair);
+      border-radius: 46% 54% 48% 52% / 50% 48% 52% 50%;
+      box-shadow: inset -14px -12px 0 rgba(255,255,255,0.04);
+    }
+
+    .head {
+      position: absolute;
+      left: 70px;
+      top: 52px;
+      width: 146px;
+      height: 156px;
+      background: var(--skin);
+      border-radius: 48% 48% 50% 50% / 45% 45% 55% 55%;
+      z-index: 3;
+      box-shadow: inset -12px -8px 0 rgba(214, 147, 104, 0.14);
+    }
+
+    .bangs {
+      position: absolute;
+      left: 6px;
+      top: -10px;
+      width: 126px;
+      height: 54px;
+      background: var(--hair);
+      border-radius: 62% 38% 44% 56% / 52% 64% 36% 48%;
+      transform: rotate(-7deg);
+    }
+
+    .ear {
+      position: absolute;
+      width: 18px;
+      height: 26px;
+      background: #f2cab5;
+      border-radius: 50%;
+      top: 108px;
+      z-index: 2;
+    }
+
+    .ear.left { left: 58px; }
+    .ear.right { right: 58px; }
+
+    .eye {
+      position: absolute;
+      top: 104px;
+      width: 12px;
+      height: 18px;
+      background: #2f2331;
+      border-radius: 50%;
+      z-index: 4;
+    }
+
+    .eye.left { left: 42px; }
+    .eye.right { right: 42px; }
+
+    .eye::after {
+      content: "";
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 50%;
+      left: 2px;
+      top: 2px;
+    }
+
+    .nose {
+      position: absolute;
+      width: 10px;
+      height: 18px;
+      border-left: 3px solid rgba(170, 118, 93, 0.8);
+      border-bottom: 3px solid transparent;
+      border-radius: 50%;
+      left: 68px;
+      top: 112px;
+      z-index: 4;
+    }
+
+    .smile {
+      position: absolute;
+      left: 54px;
+      top: 128px;
+      width: 38px;
+      height: 18px;
+      border-bottom: 4px solid #d56781;
+      border-radius: 0 0 26px 26px;
+      z-index: 4;
+    }
+
+    .neck {
+      position: absolute;
+      left: 124px;
+      top: 196px;
+      width: 34px;
+      height: 42px;
+      background: var(--skin);
+      border-radius: 0 0 12px 12px;
+      z-index: 2;
+    }
+
+    .body {
+      position: absolute;
+      left: 82px;
+      top: 226px;
+      width: 118px;
+      height: 128px;
+      background: linear-gradient(180deg, var(--dress) 0%, var(--dress-deep) 100%);
+      border-radius: 28% 28% 22% 22% / 20% 20% 18% 18%;
+      z-index: 1;
+      box-shadow: inset 0 -12px 0 rgba(255,255,255,0.08);
+    }
+
+    .body::before,
+    .body::after {
+      content: "";
+      position: absolute;
+      top: 22px;
+      width: 18px;
+      height: 54px;
+      background: rgba(255,255,255,0.18);
+      border-radius: 10px;
+    }
+
+    .body::before { left: 18px; }
+    .body::after { right: 18px; }
+
+    .arm {
+      position: absolute;
+      top: 246px;
+      width: 20px;
+      height: 92px;
+      background: var(--skin);
+      border-radius: 18px;
+      z-index: 0;
+    }
+
+    .arm.left { left: 66px; transform: rotate(18deg); }
+    .arm.right { right: 66px; transform: rotate(-18deg); }
+
+    .sparkle {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: linear-gradient(135deg, #fff, var(--gold));
+      clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
+      animation: twinkle 2.5s ease-in-out infinite;
+      opacity: 0.95;
+    }
+
+    .sparkle.s1 { top: 90px; left: 76px; }
+    .sparkle.s2 { top: 130px; right: 88px; animation-delay: 0.8s; }
+    .sparkle.s3 { bottom: 214px; left: 92px; animation-delay: 1.6s; }
+    .sparkle.s4 { bottom: 170px; right: 96px; animation-delay: 2.2s; }
+
+    @keyframes twinkle {
+      0%, 100% { transform: scale(0.95) rotate(0deg); opacity: 0.75; }
+      50% { transform: scale(1.3) rotate(45deg); opacity: 1; }
+    }
+
+    h1 {
+      margin: 6px 0 8px;
+      font-size: clamp(2.4rem, 5vw, 3.5rem);
+      color: #48313f;
+      letter-spacing: 1px;
+      font-weight: 800;
+    }
+
+    p {
+      margin: 0;
+      color: #724f63;
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <div class="rose one"></div>
+    <div class="rose two"></div>
+    <div class="rose three"></div>
+    <div class="rose four"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="sparkle s1"></div>
+    <div class="sparkle s2"></div>
+    <div class="sparkle s3"></div>
+    <div class="sparkle s4"></div>
+
+    <div class="card">
+      <div class="portrait" aria-label="Illustration of Priya">
+        <div class="hair-back"></div>
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+        <div class="head">
+          <div class="bangs"></div>
+          <div class="eye left"></div>
+          <div class="eye right"></div>
+          <div class="nose"></div>
+          <div class="smile"></div>
+        </div>
+        <div class="neck"></div>
+        <div class="arm left"></div>
+        <div class="arm right"></div>
+        <div class="body"></div>
+      </div>
+
+      <h1>Priya</h1>
+      <p>Beautiful, kind, and full of light ✨</p>
+    </div>
+  </div>
+</body>
+</html>
